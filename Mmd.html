@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>صفحه رسمی ممد</title>
+  <style>
+    /* Reset و تنظیمات پایه */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Tahoma', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #444cff;
+      padding: 15px 30px;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    nav {
+      background: #5566ff;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 12px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd369;
+    }
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    main h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+      color: #333;
+      text-shadow: 1px 1px 3px #fff8;
+    }
+    main p {
+      font-size: 20px;
+      color: #444;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+    button {
+      background-color: #ff6f61;
+      border: none;
+      padding: 15px 30px;
+      font-size: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 4px 8px #ff6f6140;
+      transition: background-color 0.3s ease;
+      margin-bottom: 40px;
+    }
+    button:hover {
+      background-color: #ff3b2e;
+    }
+    footer {
+      background: #444cff;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 16px;
+      box-shadow: 0 -3px 6px rgba(0,0,0,0.15);
+      user-select: none;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto 50px auto;
+      text-align: left;
+    }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 2px solid #5566ff;
+      border-radius: 6px;
+      font-size: 16px;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+    form input:focus, form textarea:focus {
+      border-color: #ff6f61;
+      outline: none;
+    }
+    form button {
+      width: 100%;
+      background-color: #5566ff;
+      border: none;
+      padding: 12px;
+      color: white;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #444cff;
+    }
+    /* انیمیشن ساده برای محتوا */
+    main, nav, header, footer, form {
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+    main {
+      animation-delay: 0.2s;
+    }
+    nav {
+      animation-delay: 0.1s;
+    }
+    header {
+      animation-delay: 0s;
+    }
+    footer {
+      animation-delay: 0.3s;
+    }
+    form {
+      animation-delay: 0.4s;
+    }
+    @keyframes fadeIn {
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+
+<header>صفحه رسمی ممد</header>
+
+<nav>
+  <a href="#about">درباره من</a>
+  <a href="#contact">تماس با من</a>
+</nav>
+
+<main>
+  <h1>سلام، من ممد هستم!</h1>
+  <p>این صفحه توسط <strong>ممد</strong> ساخته شده و می‌تونی من رو تو روبیکا با آیدی  
+    <a href="https://rubika.ir/world_winner" target="_blank" rel="noopener" style="color:#ff6f61;">@world_winner</a> دنبال کنی.</p>
+  <button onclick="alert('دمت گرم که اومدی! 😊')">کلیک کن و پیام ببین</button>
+
+  <section id="about">
+    <h2>درباره من</h2>
+    <p>من علاقه‌مند به برنامه‌نویسی، بازی‌سازی و هوش مصنوعی هستم.  
+       دوست دارم چیزهای جذاب بسازم و یاد بگیرم.</p>
+  </section>
+
+  <section id="contact">
+    <h2>تماس با من</h2>
+    <form onsubmit="event.preventDefault(); alert('پیامت ارسال شد، ممنون! 🙌'); this.reset();">
+      <label for="name">نام شما:</label>
+      <input type="text" id="name" name="name" required placeholder="اسم خودت رو وارد کن" />
+      
+      <label for="email">ایمیل شما:</label>
+      <input type="email" id="email" name="email" required placeholder="ایمیل خودت رو وارد کن" />
+      
+      <label for="message">پیام شما:</label>
+      <textarea id="message" name="message" rows="4" required placeholder="پیامت رو اینجا بنویس"></textarea>
+      
+      <button type="submit">ارسال پیام</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  © ۲۰۲۵ ساخته شده توسط ممد | آیدی روبیکا: <a href="https://rubika.ir/world_winner" target="_blank" rel="noopener" style="color:#ffd369;">@world_winner</a>
+</footer>
+
+</body>
+</html>
